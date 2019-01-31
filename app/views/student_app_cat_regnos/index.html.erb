@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Student App Cat Regnos</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Registrationnumber</th>
+      <th>Firstname</th>
+      <th>Lastname</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @student_app_cat_regnos.each do |student_app_cat_regno| %>
+      <tr>
+        <td><%= student_app_cat_regno.registrationnumber %></td>
+        <td><%= student_app_cat_regno.firstname %></td>
+        <td><%= student_app_cat_regno.lastname %></td>
+        <td><%= link_to 'Show', student_app_cat_regno %></td>
+        <td><%= link_to 'Edit', edit_student_app_cat_regno_path(student_app_cat_regno) %></td>
+        <td><%= link_to 'Destroy', student_app_cat_regno, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Student App Cat Regno', new_student_app_cat_regno_path %>

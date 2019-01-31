@@ -1,0 +1,215 @@
+Started GET "/" for 127.0.0.1 at 2019-01-22 11:20:19 +0200
+Processing by Rails::WelcomeController#index as HTML
+  Rendering C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/railties-5.2.2/lib/rails/templates/rails/welcome/index.html.erb (9.7ms)
+Completed 200 OK in 244ms (Views: 126.4ms | ActiveRecord: 0.0ms)
+
+
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ bin/rails:4
+  [1m[35m (187.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  ↳ bin/rails:4
+  [1m[35m (188.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ bin/rails:4
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateStudents (20190131090124)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (18.2ms)[0m  [1m[35mCREATE TABLE "students" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "registrationnumber" integer, "firstname" varchar, "lastname" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190131090124_create_students.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190131090124"]]
+  ↳ bin/rails:4
+  [1m[35m (155.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateStudentAppCatRegnos (20190131090229)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (4.5ms)[0m  [1m[35mCREATE TABLE "student_app_cat_regnos" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "registrationnumber" integer, "firstname" varchar, "lastname" varchar, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190131090229_create_student_app_cat_regnos.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190131090229"]]
+  ↳ bin/rails:4
+  [1m[35m (214.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Create (17.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2019-01-31 09:02:53.607913"], ["updated_at", "2019-01-31 09:02:53.607913"]]
+  ↳ bin/rails:4
+  [1m[35m (181.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Started GET "/student_app_cat_regnos" for 127.0.0.1 at 2019-01-31 11:04:17 +0200
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ C:/Ruby24-x64/lib/ruby/gems/2.4.0/gems/activerecord-5.2.2/lib/active_record/log_subscriber.rb:98
+Processing by StudentAppCatRegnosController#index as HTML
+  Rendering student_app_cat_regnos/index.html.erb within layouts/application
+  [1m[36mStudentAppCatRegno Load (0.8ms)[0m  [1m[34mSELECT "student_app_cat_regnos".* FROM "student_app_cat_regnos"[0m
+  ↳ app/views/student_app_cat_regnos/index.html.erb:16
+  Rendered student_app_cat_regnos/index.html.erb within layouts/application (44.6ms)
+Completed 200 OK in 5157ms (Views: 5052.8ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/student_app_cat_regnos/new" for 127.0.0.1 at 2019-01-31 11:04:28 +0200
+Processing by StudentAppCatRegnosController#new as HTML
+  Rendering student_app_cat_regnos/new.html.erb within layouts/application
+  Rendered student_app_cat_regnos/_form.html.erb (525.0ms)
+  Rendered student_app_cat_regnos/new.html.erb within layouts/application (619.3ms)
+Completed 200 OK in 1220ms (Views: 1092.4ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/student_app_cat_regnos" for 127.0.0.1 at 2019-01-31 11:04:50 +0200
+Processing by StudentAppCatRegnosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Jr61r4wnjesPgjWcRwyRzt0yBAoPfpRtUHs0a86AlIyTBBS61gMr7ibF+mrCETc5nSsK0+qCVV8DCLofbA1XmA==", "student_app_cat_regno"=>{"registrationnumber"=>"217204570", "firstname"=>"claude", "lastname"=>"clarisse"}, "commit"=>"Create Student app cat regno"}
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/student_app_cat_regnos_controller.rb:30
+  [1m[36mStudentAppCatRegno Create (2.8ms)[0m  [1m[32mINSERT INTO "student_app_cat_regnos" ("registrationnumber", "firstname", "lastname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["registrationnumber", 217204570], ["firstname", "claude"], ["lastname", "clarisse"], ["created_at", "2019-01-31 09:04:50.575549"], ["updated_at", "2019-01-31 09:04:50.575549"]]
+  ↳ app/controllers/student_app_cat_regnos_controller.rb:30
+  [1m[35m (181.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/student_app_cat_regnos_controller.rb:30
+Redirected to http://localhost:3000/student_app_cat_regnos/1
+Completed 302 Found in 225ms (ActiveRecord: 184.4ms)
+
+
+Started GET "/student_app_cat_regnos/1" for 127.0.0.1 at 2019-01-31 11:04:50 +0200
+Processing by StudentAppCatRegnosController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mStudentAppCatRegno Load (1.8ms)[0m  [1m[34mSELECT  "student_app_cat_regnos".* FROM "student_app_cat_regnos" WHERE "student_app_cat_regnos"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/student_app_cat_regnos_controller.rb:67
+  Rendering student_app_cat_regnos/show.html.erb within layouts/application
+  Rendered student_app_cat_regnos/show.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 473ms (Views: 344.1ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/student_app_cat_regnos" for 127.0.0.1 at 2019-01-31 11:04:53 +0200
+Processing by StudentAppCatRegnosController#index as HTML
+  Rendering student_app_cat_regnos/index.html.erb within layouts/application
+  [1m[36mStudentAppCatRegno Load (2.0ms)[0m  [1m[34mSELECT "student_app_cat_regnos".* FROM "student_app_cat_regnos"[0m
+  ↳ app/views/student_app_cat_regnos/index.html.erb:16
+  Rendered student_app_cat_regnos/index.html.erb within layouts/application (22.7ms)
+Completed 200 OK in 560ms (Views: 479.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/student_app_cat_regnos" for 127.0.0.1 at 2019-01-31 11:05:46 +0200
+Processing by StudentAppCatRegnosController#index as HTML
+  Rendering student_app_cat_regnos/index.html.erb within layouts/application
+  [1m[36mStudentAppCatRegno Load (0.7ms)[0m  [1m[34mSELECT "student_app_cat_regnos".* FROM "student_app_cat_regnos"[0m
+  ↳ app/views/student_app_cat_regnos/index.html.erb:16
+  Rendered student_app_cat_regnos/index.html.erb within layouts/application (871.3ms)
+Completed 200 OK in 2636ms (Views: 2530.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/student_app_cat_regnos/new" for 127.0.0.1 at 2019-01-31 11:05:51 +0200
+Processing by StudentAppCatRegnosController#new as HTML
+  Rendering student_app_cat_regnos/new.html.erb within layouts/application
+  Rendered student_app_cat_regnos/_form.html.erb (11.0ms)
+  Rendered student_app_cat_regnos/new.html.erb within layouts/application (170.6ms)
+Completed 200 OK in 987ms (Views: 829.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/student_app_cat_regnos" for 127.0.0.1 at 2019-01-31 11:10:21 +0200
+Processing by StudentAppCatRegnosController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bg5iOXGJqpu0RQjFLVGvzW78TRuoo0hQIEVVyg7zJITbtMMsK60Mnp0CxzOoTAk6LuVDwk1fiWJzNtu+rH7nkA==", "student_app_cat_regno"=>{"registrationnumber"=>"789977", "firstname"=>"hjjkii", "lastname"=>"gjjuuu"}, "commit"=>"Create Student app cat regno"}
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/student_app_cat_regnos_controller.rb:30
+  [1m[36mStudentAppCatRegno Create (4.4ms)[0m  [1m[32mINSERT INTO "student_app_cat_regnos" ("registrationnumber", "firstname", "lastname", "created_at", "updated_at") VALUES (?, ?, ?, ?, ?)[0m  [["registrationnumber", 789977], ["firstname", "hjjkii"], ["lastname", "gjjuuu"], ["created_at", "2019-01-31 09:10:21.967500"], ["updated_at", "2019-01-31 09:10:21.967500"]]
+  ↳ app/controllers/student_app_cat_regnos_controller.rb:30
+  [1m[35m (141.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/student_app_cat_regnos_controller.rb:30
+Redirected to http://localhost:3000/student_app_cat_regnos/2
+Completed 302 Found in 179ms (ActiveRecord: 146.4ms)
+
+
+Started GET "/student_app_cat_regnos/2" for 127.0.0.1 at 2019-01-31 11:10:22 +0200
+Processing by StudentAppCatRegnosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudentAppCatRegno Load (0.6ms)[0m  [1m[34mSELECT  "student_app_cat_regnos".* FROM "student_app_cat_regnos" WHERE "student_app_cat_regnos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/student_app_cat_regnos_controller.rb:67
+  Rendering student_app_cat_regnos/show.html.erb within layouts/application
+  Rendered student_app_cat_regnos/show.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 459ms (Views: 383.5ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/student_app_cat_regnos/2/edit" for 127.0.0.1 at 2019-01-31 11:10:30 +0200
+Processing by StudentAppCatRegnosController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudentAppCatRegno Load (0.7ms)[0m  [1m[34mSELECT  "student_app_cat_regnos".* FROM "student_app_cat_regnos" WHERE "student_app_cat_regnos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/student_app_cat_regnos_controller.rb:67
+  Rendering student_app_cat_regnos/edit.html.erb within layouts/application
+  Rendered student_app_cat_regnos/_form.html.erb (10.2ms)
+  Rendered student_app_cat_regnos/edit.html.erb within layouts/application (77.4ms)
+Completed 200 OK in 519ms (Views: 440.6ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/student_app_cat_regnos/2" for 127.0.0.1 at 2019-01-31 11:10:34 +0200
+Processing by StudentAppCatRegnosController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mStudentAppCatRegno Load (0.7ms)[0m  [1m[34mSELECT  "student_app_cat_regnos".* FROM "student_app_cat_regnos" WHERE "student_app_cat_regnos"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/student_app_cat_regnos_controller.rb:67
+  Rendering student_app_cat_regnos/show.html.erb within layouts/application
+  Rendered student_app_cat_regnos/show.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 591ms (Views: 475.5ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/student_app_cat_regnos" for 127.0.0.1 at 2019-01-31 11:10:37 +0200
+Processing by StudentAppCatRegnosController#index as HTML
+  Rendering student_app_cat_regnos/index.html.erb within layouts/application
+  [1m[36mStudentAppCatRegno Load (0.8ms)[0m  [1m[34mSELECT "student_app_cat_regnos".* FROM "student_app_cat_regnos"[0m
+  ↳ app/views/student_app_cat_regnos/index.html.erb:16
+  Rendered student_app_cat_regnos/index.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 553ms (Views: 468.2ms | ActiveRecord: 0.8ms)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateLearners (20190131100932)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190131100932_create_learners.rb:3
+  [1m[35m (163.5ms)[0m  [1m[35mCREATE TABLE "learners" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "regno" integer, "name" varchar, "telephone" varchar, "address" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190131100932_create_learners.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190131100932"]]
+  ↳ bin/rails:4
+  [1m[35m (631.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+Migrating to CreateTonnies (20190131101227)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (54.2ms)[0m  [1m[35mCREATE TABLE "tonnies" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "regno" integer, "name" varchar, "telephone" varchar, "address" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190131101227_create_tonnies.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190131101227"]]
+  ↳ bin/rails:4
+  [1m[35m (263.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.8ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4
+Migrating to CreateGigis (20190131103515)
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  ↳ db/migrate/20190131103515_create_gigis.rb:3
+  [1m[35m (3.3ms)[0m  [1m[35mCREATE TABLE "gigis" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "regno" integer, "name" varchar, "telephone" varchar, "address" text, "created_at" datetime NOT NULL, "updated_at" datetime NOT NULL)[0m
+  ↳ db/migrate/20190131103515_create_gigis.rb:3
+  [1m[36mActiveRecord::SchemaMigration Create (0.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES (?)[0m  [["version", "20190131103515"]]
+  ↳ bin/rails:4
+  [1m[35m (137.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  ↳ bin/rails:4
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (0.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ bin/rails:4
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  ↳ bin/rails:4

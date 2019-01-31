@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Registrationnumber:</strong>
+  <%= @student_app_cat_regno.registrationnumber %>
+</p>
+
+<p>
+  <strong>Firstname:</strong>
+  <%= @student_app_cat_regno.firstname %>
+</p>
+
+<p>
+  <strong>Lastname:</strong>
+  <%= @student_app_cat_regno.lastname %>
+</p>
+
+<%= link_to 'Edit', edit_student_app_cat_regno_path(@student_app_cat_regno) %> |
+<%= link_to 'Back', student_app_cat_regnos_path %>

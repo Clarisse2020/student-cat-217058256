@@ -1,0 +1,2 @@
+class StudentAppCatRegno < ApplicationRecord
+end

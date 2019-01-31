@@ -1,0 +1,2 @@
+class Tonny < ApplicationRecord
+end

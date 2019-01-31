@@ -1,0 +1,2 @@
+class Gigi < ApplicationRecord
+end
